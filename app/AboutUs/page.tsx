@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from "next/link";
 import styles from "./aboutStyle.module.css";
-import { Dict } from 'styled-components/dist/types';
 
 // For the nav bar have the video play here and the home page can just be a static banner
 

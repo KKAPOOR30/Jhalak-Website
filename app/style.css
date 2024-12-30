@@ -1,10 +1,24 @@
+#navdecoration {
+    width:100%;
+    height: 20%;
+    background-color: bisque;
+}
+
+#navvideo video {
+    object-fit: cover;
+    justify-self: center;
+}
+
 #navbar {
-    background-color: transparent;
+    width:70%;
+    transform: translate(0px, 20px);
     position:relative;
+    background-color: transparent;
     display: flex;
     margin-left: 15%;
     margin-right:15%;
     justify-content: center;
+    justify-self: center;
 }
 
 #navbar li {
@@ -15,7 +29,8 @@
     padding-left: 5%;
     padding-right: 5%;
     font-size: 15px;
-
+    color: aqua;
+    text-decoration: underline;
 }
 
 #homeaboutus {
