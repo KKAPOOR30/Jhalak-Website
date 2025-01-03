@@ -15,8 +15,8 @@ export default function Home() {
               <li><Link href="/Events">Events</Link></li>
           </ul>
           <div id="navvideo">
-            <video autoPlay loop muted playsInline>
-              <source src="Frosh_Video.mp4" type="video/mp4"></source>
+            <video autoPlay loop muted playsInline preload="auto">
+              <source src="/Frosh_Video.mp4" type="video/mp4"></source>
             </video>
           </div>
       </div>

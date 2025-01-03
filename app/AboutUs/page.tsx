@@ -54,7 +54,7 @@ export default function AboutUs() {
                 <li><a>Events</a></li>
             </ul>
         </div>
-        <div className={styles.meetTheTeam}>
+        <div className={styles.aboutTheTeam}>
           <h1 className={styles.titles}>Who we are</h1>
           <p> We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
             h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
