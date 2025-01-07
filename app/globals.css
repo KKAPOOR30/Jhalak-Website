@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f0ad4c;
   --foreground: #171717;
 }
 
@@ -21,6 +21,18 @@ body {
 }
 
 #topbar {
-  background-color: purple;
+  background-color: #d32a58;
   height: 35px;
+  display: flex;
+  padding-left: 3%;
+  gap: 10px;
+}
+
+#ig_logo {
+  margin-top: 2.5px;
+  height: 25px;
+}
+
+#yt_logo {
+  height: 30px;
 }

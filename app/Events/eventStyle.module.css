@@ -1,0 +1,76 @@
+.navdecoration {
+    background-color:rgb(211, 20, 20);
+}
+
+.navbar {
+    background-color: transparent;
+    position:relative;
+    display: flex;
+    margin-left: 15%;
+    margin-right:15%;
+    justify-content: center;
+}
+
+.navbar li {
+    display: block;
+    text-align: center;
+    min-width: 50px;
+    width: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 15px;
+}
+
+.titles {
+    text-align: center;
+    font-size: x-large;
+    margin: 2%;
+}
+
+.eventdiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eventBox {
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    margin: 2% 5% 2% 5%;
+    width: 90%; 
+    height:15vw;
+    cursor: pointer; /* Change cursor to indicate clickable */
+    border-radius: 8px; /* Optional: rounded corners */
+    transition: transform 0.3s ease; /* Optional: zoom effect */
+    border-color: azure;
+    border-width: 2px;
+}
+
+.eventBox:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.details {
+    width: 84%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.eventBox img {
+    width: 15%;
+    height: 100%;
+}
+
+.details h1{
+    font-size: x-large;
+}
+
+.details h2 {
+    font-size: large;
+}
+
+.titles {
+    font-size: xx-large;
+}

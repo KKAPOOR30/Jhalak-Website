@@ -28,7 +28,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div id="topbar">Top Bar</div>
+        <div id="topbar">
+          <a href="https://www.instagram.com/uoftjhalak/" target="_blank" rel="noopener noreferrer">
+            <img id="ig_logo" src="instagram_logo.png"></img>
+          </a>
+          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+            <img id="yt_logo" src="youtube_logo.png"></img>
+          </a>
+        </div>
       <main>{children}</main>
       </body>
     </html>

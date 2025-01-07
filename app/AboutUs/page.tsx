@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from "next/link";
 import styles from "./aboutStyle.module.css";
-import { Dict } from 'styled-components/dist/types';
 
 // For the nav bar have the video play here and the home page can just be a static banner
 
@@ -55,7 +54,7 @@ export default function AboutUs() {
                 <li><a>Events</a></li>
             </ul>
         </div>
-        <div className={styles.meetTheTeam}>
+        <div className={styles.aboutTheTeam}>
           <h1 className={styles.titles}>Who we are</h1>
           <p> We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
             h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
@@ -66,7 +65,7 @@ export default function AboutUs() {
         </div>
         <div>
           <h1 className={styles.titles}>Meet The Team</h1>
-          <h2 className={styles.teamTitle}>Presidants</h2>
+          <h2 className={styles.teamTitle}>Presidents</h2>
           <div className={styles.TeamPhotos}>
             {presidants.map((person) => (
               <div

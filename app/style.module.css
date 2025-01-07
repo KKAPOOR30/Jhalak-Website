@@ -1,0 +1,104 @@
+.navdecoration {
+    width:100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.navvideo video {
+    filter: brightness(80%);
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: fill;
+    justify-self: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.navbar {
+    width:70%;
+    transform: translate(0px, 5vw);
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    margin-left: 15%;
+    margin-right:15%;
+    justify-content: center;
+    justify-self: center;
+    z-index: 1;
+}
+
+.navbar li {
+    display: block;
+    text-align: center;
+    min-width: 50px;
+    width: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1.1rem;
+    color: #d32a58;
+    font-weight: bold;
+}
+
+.titles {
+    font-size: 1.5rem;
+    color: #058789;
+    font-weight: bold;
+    justify-self: center;
+}
+
+.homeSection {
+    position: relative;
+    padding: 3%;
+    width: 100%;
+    height: fit-content;
+}
+
+.homeupcoming {
+    padding-top: 2%;
+    padding-left: 7%;
+    width: 100%;
+    height: fit-content;
+}
+
+.eventdiv {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eventBox {
+    display: flex;
+    gap: 2%;
+    align-items: center;
+    margin: 2% 5% 2% 5%;
+    width: 90%; 
+    height:15vw;
+    cursor: pointer; /* Change cursor to indicate clickable */
+    border-radius: 8px; /* Optional: rounded corners */
+    transition: transform 0.3s ease; /* Optional: zoom effect */
+    border-color: azure;
+    border-width: 2px;
+}
+
+.eventBox:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.details {
+    width: 84%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.eventBox img {
+    width: 15%;
+    height: 100%;
+}
+
+.details h1{
+    font-size: x-large;
+}
+
+.details h2 {
+    font-size: large;
+}
