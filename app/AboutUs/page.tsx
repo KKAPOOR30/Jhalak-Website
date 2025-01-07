@@ -65,7 +65,7 @@ export default function AboutUs() {
         </div>
         <div>
           <h1 className={styles.titles}>Meet The Team</h1>
-          <h2 className={styles.teamTitle}>Presidants</h2>
+          <h2 className={styles.teamTitle}>Presidents</h2>
           <div className={styles.TeamPhotos}>
             {presidants.map((person) => (
               <div
