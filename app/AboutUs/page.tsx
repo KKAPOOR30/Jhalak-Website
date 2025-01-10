@@ -45,66 +45,70 @@ export default function AboutUs() {
 
   return (
     <main>
-        <div className={styles.navdecoration}>
-            <ul className={styles.navbar}>
-                <li><Link href="\">Home Page</Link></li>
-                <li><Link href="\AboutUs">About Us</Link></li>
-                <li><a>Get Involved</a></li>
-                <li><a>Gallery</a></li>
-                <li><a>Events</a></li>
-            </ul>
-        </div>
-        <div className={styles.aboutTheTeam}>
-          <h1 className={styles.titles}>Who we are</h1>
-          <p> We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
-            h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
-            h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn
-            We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
-            h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn
-          </p>
-        </div>
-        <div>
-          <h1 className={styles.titles}>Meet The Team</h1>
-          <h2 className={styles.teamTitle}>Presidents</h2>
-          <div className={styles.TeamPhotos}>
-            {presidants.map((person) => (
-              <div
-              key={person.id}
-              className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
-              onClick={() => toggleImage(person.id)}
-              >
-              <img src={person.src} alt={`Image ${person.id}`} />
-              <div className={styles.description}>{person.description}</div>
-            </div>
-            ))}
+      <div className={styles.navdecoration}>
+          <ul className={styles.navbar}>
+              <li><Link href="\">Home</Link></li>
+              <li><Link href="\AboutUs">About</Link></li>
+              <li><Link href="\GetInvolved">Join</Link></li>
+              <li><Link href="\Gallery">Gallery</Link></li>
+              <li><Link href="\Events">Events</Link></li>
+          </ul>
+          <img className={styles.logo} src="LogoBGR.png"></img>
+          <div className={styles.navvideo}>
+            <img src="dance_banner_top.jpg"></img>
           </div>
-          <h2 className={styles.teamTitle}>Directors</h2>
-          <div className={styles.TeamPhotos}>
-          {directors.map((person) => (
-              <div
-              key={person.id}
-              className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
-              onClick={() => toggleImage(person.id)}
-              >
-              <img src={person.src} alt={`Image ${person.id}`} />
-              <div className={styles.description}>{person.description}</div>
-            </div>
-            ))}
+    </div>
+      <div className={styles.aboutTheTeam}>
+        <h1 className={styles.titles}>Who we are</h1>
+        <p> We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
+          h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
+          h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn
+          We are Jhalak blah blah blah. KBwjbdjhwbnab hdfnCAC JKDEWJBDNWKJEFNwlrgnknerlk rfnvke i efi
+          h ciejfjrinjd cibc wifjnjec wiefbc weibwejwe wibv djw chc wiebcwjde cwicei wuieb ciwewiebowdn
+        </p>
+      </div>
+      <div>
+        <h1 className={styles.titles}>Meet The Team</h1>
+        <h2 className={styles.teamTitle}>Presidents</h2>
+        <div className={styles.TeamPhotos}>
+          {presidants.map((person) => (
+            <div
+            key={person.id}
+            className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
+            onClick={() => toggleImage(person.id)}
+            >
+            <img src={person.src} alt={`Image ${person.id}`} />
+            <div className={styles.description}>{person.description}</div>
           </div>
-          <h2 className={styles.teamTitle}>Choreographers</h2>
-          <div className={styles.TeamPhotos}>
-            {choreographers.map((person) => (
-              <div
-              key={person.id}
-              className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
-              onClick={() => toggleImage(person.id)}
-              >
-              <img src={person.src} alt={`Image ${person.id}`} />
-              <div className={styles.description}>{person.description}</div>
-            </div>
-            ))}
-          </div>
+          ))}
         </div>
+        <h2 className={styles.teamTitle}>Directors</h2>
+        <div className={styles.TeamPhotos}>
+        {directors.map((person) => (
+            <div
+            key={person.id}
+            className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
+            onClick={() => toggleImage(person.id)}
+            >
+            <img src={person.src} alt={`Image ${person.id}`} />
+            <div className={styles.description}>{person.description}</div>
+          </div>
+          ))}
+        </div>
+        <h2 className={styles.teamTitle}>Choreographers</h2>
+        <div className={styles.TeamPhotos}>
+          {choreographers.map((person) => (
+            <div
+            key={person.id}
+            className={`${styles.imageBox} ${activeIndex.includes(person.id) ? styles.showDescription : ''}`}
+            onClick={() => toggleImage(person.id)}
+            >
+            <img src={person.src} alt={`Image ${person.id}`} />
+            <div className={styles.description}>{person.description}</div>
+          </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }

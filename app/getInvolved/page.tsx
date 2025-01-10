@@ -15,13 +15,13 @@ export default function eventPage(){
       });
     
     const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data Submitted:', formData);
+        e.preventDefault();
+        console.log('Form Data Submitted:', formData);
     };
 
 
@@ -29,17 +29,21 @@ export default function eventPage(){
         <main>
             <div className={styles.navdecoration}>
                 <ul className={styles.navbar}>
-                    <li><Link href="\">Home Page</Link></li>
-                    <li><Link href="\AboutUs">About Us</Link></li>
-                    <li><a>Get Involved</a></li>
-                    <li><a>Gallery</a></li>
+                    <li><Link href="\">Home</Link></li>
+                    <li><Link href="\AboutUs">About</Link></li>
+                    <li><Link href="\GetInvolved">Join</Link></li>
+                    <li><Link href="\Gallery">Gallery</Link></li>
                     <li><Link href="\Events">Events</Link></li>
                 </ul>
+                <img className={styles.logo} src="LogoBGR.png"></img>
+                <div className={styles.navvideo}>
+                    <img src="dance_banner_top.jpg"></img>
+                </div>
             </div>
-            <h1>Sign Up</h1>
-            <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto' }}>
+            <h1 className={styles.titles}>Sign Up</h1>
+            <form className={styles.formDiv} onSubmit={handleSubmit}>
                 <div>
-                    <label>Name:</label>
+                    <label>Full Name:</label>
                     <input
                     type="text"
                     id="name"
@@ -50,7 +54,7 @@ export default function eventPage(){
                     />
                 </div>
                 <div>
-                    <label>Email:</label>
+                    <label>UofT email:</label>
                     <input
                     type="email"
                     id="email"
@@ -61,24 +65,26 @@ export default function eventPage(){
                     />
                 </div>
                 <div>
-                    <label>Student ID:</label>
-                    <textarea
+                    <label>Student Number:</label>
+                    <input
                     id="studentid"
                     name="studentid"
                     value={formData.studentid}
                     onChange={handleChange}
                     required
-                    ></textarea>
+                    ></input>
                 </div>
                 <div>
-                    <label>How did you hear about us:</label>
-                    <textarea
+                    <label>What year are you currently in: </label>
+                    <input
+                    type="radio"
                     id="hear"
                     name="hear"
                     value={formData.hear}
                     onChange={handleChange}
                     required
-                    ></textarea>
+                    >
+                    </input>
                 </div>
                 <button type="submit">Submit</button>
             </form>
