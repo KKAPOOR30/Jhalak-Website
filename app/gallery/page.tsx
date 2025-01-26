@@ -31,8 +31,8 @@ export default function Page() {
         return <p>No data available.</p>;
     }
 
-    writeToSheet([["HJwbdh", 100],["aaa"]], "A1:A5");
-
+    writeToSheet([["HJwbdh", 100]], "A1:A5");
+  
     return (
         <main>
         {info.map((event) => (
