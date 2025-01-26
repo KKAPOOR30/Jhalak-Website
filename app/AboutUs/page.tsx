@@ -10,8 +10,8 @@ export default function AboutUs() {
   const [activeIndex, setActiveIndex] = useState<number[]>([]);
 
   const presidants = [
-    {src:"Logo.jpg", description:"This wedjfjwcjc cihwb cdi wibd cihwe cwihc wiuc wiceuwiicwbvjfviev ief eivu ief iwudc i icubwdichb wi iwc is bicud i wi enhj is bhsiash dbwjc wdjcw jd", id:0},
-    {src:"Logo.jpg", description:"Presidant: Lavanya Thakur bhah blah blah blah ", id:1}
+    {src:"shreya2.jpg", description:"This wedjfjwcjc cihwb cdi wibd cihwe cwihc wiuc wiceuwiicwbvjfviev ief eivu ief iwudc i icubwdichb wi iwc is bicud i wi enhj is bhsiash dbwjc wdjcw jd", id:0},
+    {src:"lavanya.jpeg", description:"Presidant: Lavanya Thakur bhah blah blah blah ", id:1}
   ]
 
   const directors = [
@@ -28,11 +28,11 @@ export default function AboutUs() {
   ]
 
   const choreographers = [
-    {src:"Logo.jpg", description:"This is bhsiash dbwjc wdjcw jd", id:12},
-    {src:"Logo.jpg", description:"This is bhsiash dbwjc wdjcw jd", id:13},
-    {src:"Logo.jpg", description:"This is bhsiash dbwjc wdjcw jd", id:14},
-    {src:"Logo.jpg", description:"This is bhsiash dbwjc wdjcw jd", id:15},
-    {src:"Logo.jpg", description:"This is bhsiash dbwjc wdjcw jd", id:16}
+    {src:"ishaan.jpeg", description:"This is bhsiash dbwjc wdjcw jd", id:12},
+    {src:"ishaan2.jpeg", description:"This is bhsiash dbwjc wdjcw jd", id:13},
+    {src:"piyush.jpeg", description:"This is bhsiash dbwjc wdjcw jd", id:14},
+    {src:"reva.jpeg", description:"This is AKA Monjulika", id:15},
+    {src:"piyush2.jpeg", description:"This is bhsiash dbwjc wdjcw jd", id:16}
   ]
 
   const toggleImage = (id: number) => {

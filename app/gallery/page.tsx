@@ -32,7 +32,7 @@ export default function Page() {
     }
 
     writeToSheet([["HJwbdh", 100]], "A1:A5");
-
+  
     return (
         <main>
         {info.map((event) => (
