@@ -1,9 +1,8 @@
 "use client"
 
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.css";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
           </ul>
           <img className={styles.logo} src="LogoBGR.png"></img>
           <div className={styles.navvideo}>
-            <img src="dance_banner.jpg"></img>
+            <img src="website_banner.jpg"></img>
           </div>
       </div>
       <div className={styles.homeSection}>
@@ -49,7 +48,6 @@ export default function Home() {
       <div className={styles.homeSection}>
         <h1 className={styles.titles}>Upcoming</h1>
         {
-        
         events.slice(0,3).map((event) => (
                 <div onClick={() => checkEvent(event.id)} key={event.id} className={styles.eventBox}>
                     <img src={event.image} alt={`Image ${event.id}`}/>

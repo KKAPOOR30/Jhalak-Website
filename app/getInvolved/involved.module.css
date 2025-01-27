@@ -62,11 +62,11 @@
     display: flex;
     width: 100%;
     background-color: blueviolet;
-    gap: auto;
+    justify-content: center;
+    gap: 200px;
 }
 
 .formDiv label{
-
     height: fit-content;
 }
 

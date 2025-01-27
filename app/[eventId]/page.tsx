@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from "next/link";
-import styles from "./event.module.css"
+import styles from "./event.module.css";
+import { getSheetData } from './../googleConnection';
 
 
 export default function eventPage({ params }){
@@ -34,7 +35,6 @@ export default function eventPage({ params }){
     e.preventDefault();
     console.log('Form Data Submitted:', formData);
     };
-
 
     return (
         <main>
