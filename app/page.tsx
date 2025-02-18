@@ -1,9 +1,8 @@
 "use client"
 
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./style.module.css";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
@@ -26,16 +25,16 @@ export default function Home() {
     <main>
       <div className={styles.navdecoration}>
           <ul className={styles.navbar}>
-              <li><Link href="\">Home Page</Link></li>
-              <li><Link href="\AboutUs">About Us</Link></li>
-              <li><a>Get Involved</a></li>
-              <li><a>Gallery</a></li>
-              <li><Link href="/Events">Events</Link></li>
+              <li><Link href="\">Home</Link></li>
+              <li><Link href="\AboutUs">About</Link></li>
+              <li><Link href="\GetInvolved">Join</Link></li>
+              <li><Link href="\Gallery">Gallery</Link></li>
+              <li><Link href="\Events">Events</Link></li>
           </ul>
-          <div className={styles.navvideo}>
-            <video autoPlay loop muted playsInline preload="auto">
-              <source src="/Frosh_Video.mp4" type="video/mp4"></source>
-            </video>
+          <img className={styles.jhalakTitle} src='jhalak-title.png'></img>
+          <img className={styles.logo} src='jhalak-logo.png'></img>
+          <div className={styles.navimg}>
+            <img src="jhalak-background.png"></img>
           </div>
       </div>
       <div className={styles.homeSection}>
@@ -50,7 +49,6 @@ export default function Home() {
       <div className={styles.homeSection}>
         <h1 className={styles.titles}>Upcoming</h1>
         {
-        
         events.slice(0,3).map((event) => (
                 <div onClick={() => checkEvent(event.id)} key={event.id} className={styles.eventBox}>
                     <img src={event.image} alt={`Image ${event.id}`}/>
