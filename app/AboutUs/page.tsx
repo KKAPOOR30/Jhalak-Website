@@ -24,7 +24,7 @@ export default function AboutUs() {
     {src:"parnika_photo.jpg", description:["Parnika Saxena (Events Director)", "3rd year, Psychology Specialist + Minor in Applied Stats", "Fav Style: Kathak", "Fun fact: I've lived in Zimbabwe for 4 years and it was one of my favorite parts of my childhood."], id:7},
     {src:"rishi_photo.jpg", description:["Rishi Shah (Outreach Director)", "⁠4th year, Specialist in Strategic Management", "Fav style: Ajay Devgan Dance", "⁠Fun Fact: I did a world tour, went to 50+ cities across 18 countries and did the SRK pose in every single location"], id:8},
     {src:"Logo.jpg", description:["Kshitij Kapoor (Tech Director)"], id:9},
-    {src:"Logo.jpg", description:["Anami Patel (First Year Rep)", "1st year, Double major in Human Bio & Psychology", "Fav Style: Bollywood", "Fun fact: I have photographic memory"], id:10},
+    {src:"anami_photo.jpg", description:["Anami Patel (First Year Rep)", "1st year, Double major in Human Bio & Psychology", "Fav Style: Bollywood", "Fun fact: I have photographic memory"], id:10},
   ]
 
   const choreographers = [
