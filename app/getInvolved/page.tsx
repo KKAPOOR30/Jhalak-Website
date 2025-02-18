@@ -1,29 +1,44 @@
-"use client";
+"use client"
 
-import React, { useState } from 'react';
-import Link from "next/link";
+import { useState } from "react"
 import styles from "./involved.module.css"
+import Link from 'next/link'
+import { writeToSheet } from "./../googleConnection";
 
+interface FormData {
+    name: string
+    email: string
+    studentNumber: string
+    heardFrom: string
+    reason: string
+}
 
 export default function eventPage(){
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        studentid: '',
-        hear: '',
-      });
+    const [formData, setFormData] = useState<FormData>({
+        name: "",
+        email: "",
+        studentNumber: "",
+        heardFrom: "",
+        reason: "",
+      })
+   
+      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const { name, value } = e.target
+        setFormData((prev) => ({ ...prev, [name]: value }))
+      }
     
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form Data Submitted:', formData);
-    };
-
+      const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+        writeToSheet([[formData.name,formData.email,formData.studentNumber,formData.heardFrom,formData.reason, false]], "GeneralTeam!A1");
+        setFormData({
+          name: "",
+          email: "",
+          studentNumber: "",
+          heardFrom: "",
+          reason: "",
+        })
+      }
 
     return (
         <main>
@@ -35,60 +50,98 @@ export default function eventPage(){
                     <li><Link href="\Gallery">Gallery</Link></li>
                     <li><Link href="\Events">Events</Link></li>
                 </ul>
-                <img className={styles.logo} src="LogoBGR.png"></img>
-                <div className={styles.navvideo}>
-                    <img src="dance_banner_top.jpg"></img>
+                <img className={styles.logo} src="jhalak-logo.png"></img>
+                <div className={styles.navimg}>
+                    <img src="jhalak-background-top.png"></img>
                 </div>
-            </div>
-            <h1 className={styles.titles}>Sign Up</h1>
-            <form className={styles.formDiv} onSubmit={handleSubmit}>
+                </div>
+            <div className="container mx-auto p-4">
+            <div className="w-full max-w-2xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h2 className="text-2xl font-bold mb-6">Team Membership Application</h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label>Full Name:</label>
+                    <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+                    Name
+                    </label>
                     <input
-                    type="text"
                     id="name"
                     name="name"
+                    type="text"
                     value={formData.name}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
                 <div>
-                    <label>UofT email:</label>
+                    <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                    Email
+                    </label>
                     <input
-                    type="email"
                     id="email"
                     name="email"
+                    type="email"
                     value={formData.email}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     required
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
                 <div>
-                    <label>Student Number:</label>
+                    <label htmlFor="studentNumber" className="block text-gray-700 text-sm font-bold mb-2">
+                    Student Number
+                    </label>
                     <input
-                    id="studentid"
-                    name="studentid"
-                    value={formData.studentid}
-                    onChange={handleChange}
+                    id="studentNumber"
+                    name="studentNumber"
+                    type="text"
+                    value={formData.studentNumber}
+                    onChange={handleInputChange}
                     required
-                    ></input>
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
                 </div>
                 <div>
-                    <label>What year are you currently in: </label>
-                    <input
-                    type="radio"
-                    id="hear"
-                    name="hear"
-                    value={formData.hear}
-                    onChange={handleChange}
+                    <label htmlFor="heardFrom" className="block text-gray-700 text-sm font-bold mb-2">
+                    How did you hear about us?
+                    </label>
+                    <select
+                    id="heardFrom"
+                    name="heardFrom"
+                    value={formData.heardFrom}
+                    onChange={handleInputChange}
                     required
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     >
-                    </input>
+                    <option value="">Select an option</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="Website">Website</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Club Fair">Club Fair</option>
+                    </select>
                 </div>
-                <button type="submit">Submit</button>
-            </form>
-
+                <div>
+                    <label htmlFor="reason" className="block text-gray-700 text-sm font-bold mb-2">
+                    Why do you want to join the team?
+                    </label>
+                    <textarea
+                    id="reason"
+                    name="reason"
+                    value={formData.reason}
+                    onChange={handleInputChange}
+                    required
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                >
+                    Submit Application
+                </button>
+                </form>
+            </div>
+            </div>
         </main> 
     )
 }

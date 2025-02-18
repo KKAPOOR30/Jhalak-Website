@@ -31,9 +31,10 @@ export default function Home() {
               <li><Link href="\Gallery">Gallery</Link></li>
               <li><Link href="\Events">Events</Link></li>
           </ul>
-          <img className={styles.logo} src="LogoBGR.png"></img>
-          <div className={styles.navvideo}>
-            <img src="website_banner.jpg"></img>
+          <img className={styles.jhalakTitle} src='jhalak-title.png'></img>
+          <img className={styles.logo} src='jhalak-logo.png'></img>
+          <div className={styles.navimg}>
+            <img src="jhalak-background.png"></img>
           </div>
       </div>
       <div className={styles.homeSection}>

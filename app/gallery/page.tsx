@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from 'next/link'
+import styles from "./gallary.module.css"
 import { getSheetData, writeToSheet } from "./../googleConnection";
 
 export default function Page() {
@@ -35,9 +37,22 @@ export default function Page() {
 
     return (
         <main>
-        {info.map((event) => (
-            <div>{event[0]}, {event[1]}</div>
-        ))}
+        <div className={styles.navdecoration}>
+          <ul className={styles.navbar}>
+              <li><Link href="\">Home</Link></li>
+              <li><Link href="\AboutUs">About</Link></li>
+              <li><Link href="\GetInvolved">Join</Link></li>
+              <li><Link href="\Gallery">Gallery</Link></li>
+              <li><Link href="\Events">Events</Link></li>
+          </ul>
+          <img className={styles.logo} src="jhalak-logo.png"></img>
+          <div className={styles.navimg}>
+            <img src="jhalak-background-top.png"></img>
+          </div>
+        </div>
+            {info.map((event) => (
+                <div>{event[0]}, {event[1]}</div>
+            ))}
         </main>
     );
 }

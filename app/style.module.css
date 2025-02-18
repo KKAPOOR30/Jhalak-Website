@@ -4,14 +4,21 @@
 }
 
 .logo {
-    transform: translate(5vw, 10vw);
+    transform: translate(31vw, 11vw);
     position: absolute;
-    height: 30vw;
+    height: 12vw;
     z-index: 1;
 }
 
-.navvideo img {
-    filter: brightness(80%);
+.jhalakTitle {
+    transform: translate(31vw, 21vw);
+    position: absolute;
+    height: 12vw;
+    z-index: 1;
+}
+
+.navimg img {
+    filter: brightness(50%);
     width: 100%;
     object-fit: fill;
     justify-self: center;
@@ -20,13 +27,13 @@
 }
 
 .navbar {
-    width:70%;
+    width: 80%;
     transform: translate(0px, 4.5vw);
     position: absolute;
     background-color: transparent;
     display: flex;
-    margin-left: 15%;
-    margin-right:15%;
+    margin-left: 10%;
+    margin-right:10%;
     justify-content: center;
     justify-self: center;
     z-index: 1;
@@ -35,17 +42,16 @@
 .navbar li {
     display: block;
     text-align: center;
-    min-width: 50px;
-    width: 20%;
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 1.1rem;
-    color: #000000;
+    width: 18%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: 2.5vw;
+    color: #ffffff;
     font-weight: bold;
 }
 
 .titles {
-    font-size: 1.5rem;
+    font-size: 4vw;
     color: #058789;
     font-weight: bold;
     justify-self: center;
@@ -56,6 +62,10 @@
     padding: 3% 3% 0% 3%;
     width: 100%;
     height: fit-content;
+}
+
+.homeSection p {
+    font-size: 2.5vw;
 }
 
 .homeupcoming {
@@ -107,4 +117,19 @@
 
 .details h2 {
     font-size: large;
+}
+
+
+@media screen and (min-width: 700px) {
+    .navbar li {
+        font-size: 20px;
+    }
+
+    .titles {
+        font-size: 30px;
+    }
+
+    .homeSection p {
+        font-size: 20px;
+    }
 }

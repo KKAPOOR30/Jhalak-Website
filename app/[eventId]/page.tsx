@@ -40,12 +40,16 @@ export default function eventPage({ params }){
         <main>
             <div className={styles.navdecoration}>
                 <ul className={styles.navbar}>
-                    <li><Link href="\">Home Page</Link></li>
-                    <li><Link href="\AboutUs">About Us</Link></li>
-                    <li><a>Get Involved</a></li>
-                    <li><a>Gallery</a></li>
+                    <li><Link href="\">Home</Link></li>
+                    <li><Link href="\AboutUs">About</Link></li>
+                    <li><Link href="\GetInvolved">Join</Link></li>
+                    <li><Link href="\Gallery">Gallery</Link></li>
                     <li><Link href="\Events">Events</Link></li>
                 </ul>
+                <img className={styles.logo} src="jhalak-logo.png"></img>
+                <div className={styles.navimg}>
+                    <img src="jhalak-background-top.png"></img>
+                </div>
             </div>
             <div>
                 <h1>{events[eventId].name}</h1>
