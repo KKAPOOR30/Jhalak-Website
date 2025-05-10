@@ -32,7 +32,7 @@ export default function AboutUs() {
     {src:"reva_photo.jpeg", description:["Reva Birla", "2nd year Neuroscience Specialist, Biology and Psychology Minor", "Favourite Dance Style: Bollywood", "⁠Fun Fact: I was a teenage model"], id:13},
     {src:"Logo.jpg", description:["Piyush Upadhyay","3rd year Double Major in Molecular biology, Immunology, and Disease, & Human Biology + Minor in Psychology", "Fav Style: Hip Hop", "Fun Fact: I enjoy wood carving"], id:14},
     {src:"heer_photo.jpg", description:["Heer Niraj Shah", "⁠2nd year Business Administration with a specialization in Strategic Management", "⁠Favourite dance style: Afro", " ⁠Fun Fact: I have played squash at a state level"], id:15},
-    {src:"jyotshana_photo.png", description:["Jyotshana Chaileyndrachankar", "3rd year, Double Major in Molecular Biology, Immunology and Disease & Human Biology + Minor in History", "Fav Style: South Indian Folk Dance", "Fun Fact: I’ve had the incredible opportunity to showcase my talents in Bharatanatyam, singing, and Veena across more than 200 stages!"], id:16}
+    {src:"jyotshana_photo.PNG", description:["Jyotshana Chaileyndrachankar", "3rd year, Double Major in Molecular Biology, Immunology and Disease & Human Biology + Minor in History", "Fav Style: South Indian Folk Dance", "Fun Fact: I’ve had the incredible opportunity to showcase my talents in Bharatanatyam, singing, and Veena across more than 200 stages!"], id:16}
   ]
 
   const toggleImage = (id: number) => {
