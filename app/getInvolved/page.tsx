@@ -3,7 +3,7 @@
 import { useState } from "react"
 import styles from "./involved.module.css"
 import Link from 'next/link'
-import { writeToSheet } from "./../googleConnection";
+import { writeToSheet } from "../googleConnection";
 
 interface FormData {
     name: string
