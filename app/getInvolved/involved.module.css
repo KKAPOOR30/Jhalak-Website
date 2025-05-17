@@ -1,0 +1,164 @@
+.navdecoration {
+    width:100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.logo {
+    transform: translate(1vw, 2vw);
+    position: absolute;
+    height: 8vw;
+    z-index: 1;
+}
+
+.navimg img {
+    filter: brightness(60%);
+    width: 100%;
+    object-fit: fill;
+    justify-self: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.navbar {
+    width: 80%;
+    transform: translate(0px, 4.5vw);
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    margin-left: 15%;
+    margin-right:10%;
+    justify-content: center;
+    justify-self: center;
+    z-index: 1;
+}
+
+.navbar li {
+    display: block;
+    text-align: center;
+    width: 18%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: 2.5vw;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.titles {
+    text-align: center;
+    margin: 2%;
+    font-size: 4vw;
+    color: #058789;
+    font-weight: bold;
+    justify-self: center;
+}
+
+/* ###################################################### */
+
+.formDiv {
+    width: 100%;
+    max-width: 42rem; /* 2xl in Tailwind = 672px */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(179, 179, 179);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
+    border-radius: 0.5rem; /* rounded = 8px */
+    padding-left: 2rem;   /* px-8 = 32px */
+    padding-right: 2rem;
+    padding-top: 1.5rem;  /* pt-6 = 24px */
+    padding-bottom: 2rem; /* pb-8 = 32px */
+    margin-top: 1rem;
+    margin-bottom: 1rem;  /* mb-4 = 16px */
+}
+
+.formDiv h2 {
+  font-size: 1.5rem;   /* text-2xl = 24px */
+  line-height: 2rem;   /* default line-height for text-2xl */
+  font-weight: 700;    /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 = 24px */
+  color: #058789;
+}
+
+.formDiv label {
+  display: block;              /* block */
+  color: #058789;              /* text-gray-700 */
+  font-size: 0.875rem;         /* text-sm = 14px */
+  font-weight: 700;            /* font-bold */
+  margin-bottom: 0.5rem;       /* mb-2 = 8px */
+}
+
+.formDiv input {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); /* shadow */
+    appearance: none;               /* appearance-none */
+    border: 1px solid #d1d5db;      /* border (default gray border) */
+    border-radius: 0.25rem;         /* rounded = 4px */
+    width: 100%;                    /* w-full */
+    padding-top: 0.5rem;            /* py-2 = 8px */
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;          /* px-3 = 12px */
+    padding-right: 0.75rem;
+    color: #4a5568;                 /* text-gray-700 */
+    line-height: 1.25;              /* leading-tight */
+    outline: none;                  /* focus:outline-none */ 
+    transition: box-shadow 0.2s;    /* for smooth focus transition */
+}
+
+.formDiv select {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); /* shadow */
+    appearance: none;               /* appearance-none */
+    border: 1px solid #d1d5db;      /* border (default gray border) */
+    border-radius: 0.25rem;         /* rounded = 4px */
+    width: 100%;                    /* w-full */
+    padding-top: 0.5rem;            /* py-2 = 8px */
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;          /* px-3 = 12px */
+    padding-right: 0.75rem;
+    color: #4a5568;                 /* text-gray-700 */
+    line-height: 1.25;              /* leading-tight */
+    outline: none;                  /* focus:outline-none */ 
+    transition: box-shadow 0.2s;    /* for smooth focus transition */
+}
+
+.formDiv textarea {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); /* shadow */
+    appearance: none;               /* appearance-none */
+    border: 1px solid #d1d5db;      /* border (gray-300 is the default Tailwind border) */
+    border-radius: 0.25rem;         /* rounded = 4px */
+    width: 100%;                    /* w-full */
+    height: 8rem;                   /* h-32 = 128px */
+    padding: 0.5rem 0.75rem;        /* py-2 px-3 = 8px 12px */
+    color: #4a5568;                 /* text-gray-700 */
+    line-height: 1.25;              /* leading-tight */
+    outline: none;                  /* focus:outline-none */
+    transition: box-shadow 0.2s;    /* smooth focus transition */
+    resize: vertical;               /* optional: allow vertical resizing */
+}
+
+.formDiv button {
+  background-color: #058789;         /* bg-blue-500 */
+  color: white;                      /* text-white */
+  font-weight: 700;                  /* font-bold */
+  padding: 0.5rem 1rem;              /* py-2 px-4 = 8px 16px */
+  border-radius: 0.25rem;            /* rounded = 4px */
+  width: 100%;                       /* w-full */
+  outline: none;                     /* focus:outline-none */
+  transition: background-color 0.2s, box-shadow 0.2s; /* smooth hover/focus */
+}
+
+.formDiv button:hover {
+  background-color: #034243;         /* hover:bg-blue-700 */
+}
+
+@media screen and (min-width: 700px) {
+    .navbar li {
+        font-size: 20px;
+    }
+
+    .titles {
+        font-size: 33px;
+    }
+
+    .aboutTheTeam p {
+        font-size: 20px;
+    }
+
+}
