@@ -25,7 +25,7 @@ export async function getSheetData(range: string) {
     return { data: data.data.values };
 }
 
-export async function writeToSheet(data: any, range: string){
+export async function writeToSheet(data: string[], range: string){
     const glAuth = await google.auth.getClient({
         projectId: "jhalak-website",
         credentials: {

@@ -30,7 +30,7 @@ export default function GetInvolvedPage(){
     
       const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        writeToSheet([[formData.name,formData.email,formData.studentNumber,formData.heardFrom,formData.reason, false]], "GeneralTeam!A1");
+        writeToSheet([[formData.name,formData.email,formData.studentNumber,formData.heardFrom,formData.reason, "N"]], "GeneralTeam!A1");
         setFormData({
           name: "",
           email: "",
