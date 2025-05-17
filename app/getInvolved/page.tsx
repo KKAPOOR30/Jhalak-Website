@@ -13,7 +13,7 @@ interface FormData {
     reason: string
 }
 
-export default function eventPage(){
+export default function GetInvolvedPage(){
 
     const [formData, setFormData] = useState<FormData>({
         name: "",
