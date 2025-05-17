@@ -25,11 +25,11 @@ export default function Home() {
     <main>
       <div className={styles.navdecoration}>
           <ul className={styles.navbar}>
-              <li><Link href="\">Home</Link></li>
-              <li><Link href="\AboutUs">About</Link></li>
-              <li><Link href="\GetInvolved">Join</Link></li>
-              <li><Link href="\Gallery">Gallery</Link></li>
-              <li><Link href="\Events">Events</Link></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/AboutUs">About</Link></li>
+              <li><Link href="/GetInvolved">Join</Link></li>
+              <li><Link href="/Gallery">Gallery</Link></li>
+              <li><Link href="/Events">Events</Link></li>
           </ul>
           <img className={styles.jhalakTitle} src='jhalak-title.png'></img>
           <img className={styles.logo} src='jhalak-logo.png'></img>

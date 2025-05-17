@@ -1,7 +1,7 @@
 'use server';
 import { google } from "googleapis";
 
-export async function getSheetData(range) { 
+export async function getSheetData(range: string) { 
   const glAuth = await google.auth.getClient({
         projectId: "jhalak-website",
         credentials: {

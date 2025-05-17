@@ -44,23 +44,22 @@ export default function eventPage(){
         <main>
             <div className={styles.navdecoration}>
                 <ul className={styles.navbar}>
-                    <li><Link href="\">Home</Link></li>
-                    <li><Link href="\AboutUs">About</Link></li>
-                    <li><Link href="\GetInvolved">Join</Link></li>
-                    <li><Link href="\Gallery">Gallery</Link></li>
-                    <li><Link href="\Events">Events</Link></li>
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/AboutUs">About</Link></li>
+                    <li><Link href="/GetInvolved">Join</Link></li>
+                    <li><Link href="/Gallery">Gallery</Link></li>
+                    <li><Link href="/Events">Events</Link></li>
                 </ul>
                 <img className={styles.logo} src="jhalak-logo.png"></img>
                 <div className={styles.navimg}>
                     <img src="jhalak-background-top.png"></img>
                 </div>
                 </div>
-            <div className="container mx-auto p-4">
-            <div className="w-full max-w-2xl mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <h2 className="text-2xl font-bold mb-6">Team Membership Application</h2>
+            <div className={styles.formDiv}>
+                <h2>General Team Membership</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="name">
                     Name
                     </label>
                     <input
@@ -70,11 +69,10 @@ export default function eventPage(){
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
                 <div>
-                    <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="email">
                     Email
                     </label>
                     <input
@@ -84,11 +82,10 @@ export default function eventPage(){
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
                 <div>
-                    <label htmlFor="studentNumber" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="studentNumber">
                     Student Number
                     </label>
                     <input
@@ -98,11 +95,10 @@ export default function eventPage(){
                     value={formData.studentNumber}
                     onChange={handleInputChange}
                     required
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     />
                 </div>
                 <div>
-                    <label htmlFor="heardFrom" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="heardFrom">
                     How did you hear about us?
                     </label>
                     <select
@@ -111,7 +107,6 @@ export default function eventPage(){
                     value={formData.heardFrom}
                     onChange={handleInputChange}
                     required
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     >
                     <option value="">Select an option</option>
                     <option value="Instagram">Instagram</option>
@@ -121,7 +116,7 @@ export default function eventPage(){
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="reason" className="block text-gray-700 text-sm font-bold mb-2">
+                    <label htmlFor="reason">
                     Why do you want to join the team?
                     </label>
                     <textarea
@@ -130,17 +125,14 @@ export default function eventPage(){
                     value={formData.reason}
                     onChange={handleInputChange}
                     required
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
                     />
                 </div>
                 <button
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                 >
                     Submit Application
                 </button>
                 </form>
-            </div>
             </div>
         </main> 
     )
