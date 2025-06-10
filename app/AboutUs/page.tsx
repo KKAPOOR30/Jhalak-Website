@@ -12,15 +12,15 @@ export default function AboutUs() {
 
   const presidants = [
     {src:"shreya_photo.png", description:["Shreya Sarma","⁠4th year Environmental Chemestry Specialist", "⁠Fav Style: semi classical", "⁠Fun Fact: I was a background dancer for Priyanka Chopra"], id:0},
-    {src:"Logo.jpg", description:["Lavanya Thakur", "4th year, Double major in Human biology and health studies", "Fav Style: Hip Hop"], id:1}
+    {src:"lavanya_photo.jpeg", description:["Lavanya Thakur", "4th year, Double major in Human biology and health studies", "Fav Style: Hip Hop"], id:1}
   ]
 
   const directors = [
     {src:"luqman_photo.jpg", description:["Luqman Qureshi (Marketing Director)", "⁠2nd year, Arts Management", "⁠Fav Style: Bhangra", "⁠Fun Fact: I went through High school without taking one exam"], id:2},
     {src:"diya_photo.jpg", description:["Diya Annu Jina (Marketing Director)", "3rd year, Double Major in Molecular Biology, Immunology, and Disease, and Health studies", "Favorite Style: Kuthu"], id:3},
-    {src:"Logo.jpg", description:["Marketing 2"], id:4},
+    {src:"Logo.jpg", description:["Bhavana Akilan"], id:4},
     {src:"greshel_photo.jpg", description:["Greshel Wadhawan (Finance Director)", "⁠4th year, Double Degree (BBA & HBSc) with a specialization in Finance and Statistics", "⁠Fav Style: Bollywood", "⁠Fun Fact: I’ve changed my hair colour 6 times so far!"], id:5},
-    {src:"Logo.jpg", description:["Events 2"], id:6},
+    {src:"kareeshma_photo.jpg", description:["Kareesmaa (Events Director)", "2nd year, Statistics Major", "Fav Style: Bharatanatyam", "I love reading and my favorite books are 'The Idiot' and 'Normal People'"], id:6},
     {src:"parnika_photo.jpg", description:["Parnika Saxena (Events Director)", "3rd year, Psychology Specialist + Minor in Applied Stats", "Fav Style: Kathak", "Fun fact: I've lived in Zimbabwe for 4 years and it was one of my favorite parts of my childhood."], id:7},
     {src:"rishi_photo.jpg", description:["Rishi Shah (Outreach Director)", "⁠4th year, Specialist in Strategic Management", "Fav style: Ajay Devgan Dance", "⁠Fun Fact: I did a world tour, went to 50+ cities across 18 countries and did the SRK pose in every single location"], id:8},
     {src:"Logo.jpg", description:["Kshitij Kapoor (Tech Director)"], id:9},
@@ -29,8 +29,8 @@ export default function AboutUs() {
 
   const choreographers = [
     {src:"ishaan_photo.jpeg", description:["Ishaan Kaushik", "⁠3rd Year Neuroscience and Human Biology", "⁠Fav Style: Animation", "⁠Fun Fact: I've played almost all sports known to mankind"], id:12},
-    {src:"reva_photo.jpeg", description:["Reva Birla", "2nd year Neuroscience Specialist, Biology and Psychology Minor", "Favourite Dance Style: Bollywood", "⁠Fun Fact: I was a teenage model"], id:13},
-    {src:"Logo.jpg", description:["Piyush Upadhyay","3rd year Double Major in Molecular biology, Immunology, and Disease, & Human Biology + Minor in Psychology", "Fav Style: Hip Hop", "Fun Fact: I enjoy wood carving"], id:14},
+    {src:"reva_photo.jpeg", description:["Reva Birla", "2nd year Neuroscience Specialist, Biology and Psychology Minor", "Fav Style: Bollywood", "⁠Fun Fact: I was a teenage model"], id:13},
+    {src:"piyush_photo.jpeg", description:["Piyush Upadhyay","3rd year Double Major in Molecular biology, Immunology, and Disease, & Human Biology + Minor in Psychology", "Fav Style: Hip Hop", "Fun Fact: I enjoy wood carving"], id:14},
     {src:"heer_photo.jpg", description:["Heer Niraj Shah", "⁠2nd year Business Administration with a specialization in Strategic Management", "⁠Favourite dance style: Afro", " ⁠Fun Fact: I have played squash at a state level"], id:15},
     {src:"jyotshana_photo.PNG", description:["Jyotshana Chaileyndrachankar", "3rd year, Double Major in Molecular Biology, Immunology and Disease & Human Biology + Minor in History", "Fav Style: South Indian Folk Dance", "Fun Fact: I’ve had the incredible opportunity to showcase my talents in Bharatanatyam, singing, and Veena across more than 200 stages!"], id:16}
   ]
