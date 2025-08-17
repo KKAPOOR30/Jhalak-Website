@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useEffect, useState } from "react"
-import { useStripe, useElements, PaymentElement, CardElement } from "@stripe/react-stripe-js"
+import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js"
 
 const CheckoutPage = ( {amount, name, email} : { amount:number, name:string, email:string}) => {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [errorMessage, setErrorMessage] = useState<String>();
+    const [errorMessage, setErrorMessage] = useState<string>();
     const [clientSecret, setClientSecret] = useState("");
     const [loading, setLoading] = useState(false);
 

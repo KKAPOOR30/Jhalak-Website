@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from "next/link";
 import styles from "./event.module.css";
-import { getSheetData, writeToSheet } from './../googleConnection';
+import { writeToSheet } from './../googleConnection';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from '@stripe/stripe-js';
 import { events } from "../../components/constants";
@@ -14,7 +14,7 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined){
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-export default function eventPage({ params }){
+export default function EventPage({ params }){
     
     const unwrapped = React.use(params);
     const { eventId } = unwrapped;

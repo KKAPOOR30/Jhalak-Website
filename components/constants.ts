@@ -12,7 +12,7 @@ image: image of the event
 cost: cost of the event in cad, if free write 0
 page: page on the sheet the signup form should write to
 */
-export var events = [
+export const events = [
     {id: 0, name: "Hello", date: "2025/01/20", time: "12:00", location: "HL101", description: "IDEK", image: "Logo.jpg", cost: 0, page:"Event1"},
     {id: 1, name: "Presidents Dance Off", date: "2025/02/10", time: "16:30", location: "HW100", description: "Presidencts have a dance off and we vote who danced better.", image: "Logo.jpg", cost: 20.00, page:"Event1"},
     {id: 2, name: "Tiktok Dance Fun", date: "2025-03-08", time: "9:00", location: "IC130", description: "Join us while we teach you tiktok dances and make tiktoks for our page in a morning of fun.", image: "Logo.jpg", cost: 15.75, page:"Event1"},
