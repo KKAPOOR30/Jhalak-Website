@@ -39,7 +39,7 @@ export default function EventPage({ params }){
             setError("Emails do not match");
         } else { // email confirmed
             setError("");
-            (events[eventId].cost === 0)? setShowpayment(false): setShowpayment(true);
+            setShowpayment((events[eventId].cost !== 0));
             writeToSheet([[formData.name, formData.email, "false"]], "Event1!A1")
             setSubmitted(true);
         }
