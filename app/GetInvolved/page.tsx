@@ -42,6 +42,7 @@ export default function GetInvolved(){
 
     return (
         <main>
+            <img className={styles.logo} src="jhalak-logo.png"></img>
             <div className={styles.navdecoration}>
                 <ul className={styles.navbar}>
                     <li><Link href="/">Home</Link></li>
@@ -50,7 +51,6 @@ export default function GetInvolved(){
                     <li><Link href="/Gallery">Gallery</Link></li>
                     <li><Link href="/Events">Events</Link></li>
                 </ul>
-                <img className={styles.logo} src="jhalak-logo.png"></img>
                 <div className={styles.navimg}>
                     <img src="jhalak-background-top.png"></img>
                 </div>

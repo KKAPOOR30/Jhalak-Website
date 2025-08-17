@@ -1,0 +1,204 @@
+.navdecoration {
+    width:100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.logo {
+    transform: translate(1vw, 2vw);
+    position: absolute;
+    height: 8vw;
+    z-index: 1;
+}
+
+.navimg img {
+    filter: brightness(60%);
+    width: 100%;
+    object-fit: fill;
+    justify-self: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.navbar {
+    width: 80%;
+    transform: translate(0px, 4.5vw);
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    margin-left: 15%;
+    margin-right:10%;
+    justify-content: center;
+    justify-self: center;
+    z-index: 1;
+}
+
+.navbar li {
+    display: block;
+    text-align: center;
+    width: 18%;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    font-size: 2.5vw;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.titles {
+    text-align: center;
+    margin: 2%;
+    font-size: 4vw;
+    color: #058789;
+    font-weight: bold;
+    justify-self: center;
+}
+
+.pageContainer {
+    display: flex;
+    align-items: flex-start;
+}
+
+.formsContainer {
+    width: 40vw;
+}
+
+.formsContainer h2 {
+    margin: 10px;
+}
+
+.eventInfo {
+    display: inline-block;
+    width: 58vw;
+    margin: 1vw;
+    min-height: 85vh;
+    padding: 1vw;
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: white;
+    border-width: 2px;
+}
+
+.eventHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eventInfo h1 {
+    color: #058789;
+    font-size: 3.5vw;
+}
+
+.eventInfo h2 {
+    font-size: 2.5vw;
+}
+
+.eventInfo img {
+    display: block;
+    width: 12vw;
+    height: 12vw;
+}
+
+.eventInfo p {
+    font-size: 2vw;
+}
+
+.checkoutOptions {
+    display: inline-block;
+    margin: 1vw;
+    width: 38vw;
+}
+
+.personalForm {
+    display: flex;
+    margin: 1vw;
+    width: 38vw;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: transparent;
+    border-color: #ffffff;
+    border-radius: 10px;
+    border-width: 2px;
+    font-family: sans-serif;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.helperText {
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 1px;
+}
+
+.personalForm h2 {
+  font-size: 1.5rem;   /* text-2xl = 24px */
+  line-height: 2rem;   /* default line-height for text-2xl */
+  font-weight: 700;    /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 = 24px */
+  color: #058789;
+}
+
+.personalForm label {
+  display: block;              /* block */
+  color: #058789;              /* text-gray-700 */
+  font-size: 0.875rem;         /* text-sm = 14px */
+  font-weight: 700;            /* font-bold */
+}
+
+.personalForm input {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); /* shadow */
+    appearance: none;               /* appearance-none */
+    border: 1px solid #d1d5db;      /* border (default gray border) */
+    border-radius: 0.25rem;         /* rounded = 4px */
+    width: 100%;                    /* w-full */
+    padding-top: 0.5rem;            /* py-2 = 8px */
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;          /* px-3 = 12px */
+    padding-right: 0.75rem;
+    color: #4a5568;                 /* text-gray-700 */
+    line-height: 1.25;              /* leading-tight */
+    outline: none;                  /* focus:outline-none */ 
+    transition: box-shadow 0.2s;    /* for smooth focus transition */
+}
+
+.personalForm button {
+  background-color: #058789;         /* bg-blue-500 */
+  color: white;                      /* text-white */
+  font-weight: 700;                  /* font-bold */
+  padding: 0.5rem 1rem;              /* py-2 px-4 = 8px 16px */
+  border-radius: 0.25rem;            /* rounded = 4px */
+  width: 100%;                       /* w-full */
+  outline: none;
+  margin-top: 5px;                     /* focus:outline-none */
+  transition: background-color 0.2s, box-shadow 0.2s; /* smooth hover/focus */
+}
+
+.personalForm button:hover {
+  background-color: #034243;         /* hover:bg-blue-700 */
+}
+
+
+@media screen and (min-width: 700px) {
+    .navbar li {
+        font-size: 20px;
+    }
+
+    .titles {
+        font-size: 33px;
+    }
+
+    .aboutTheTeam p {
+        font-size: 20px;
+    }
+
+    .eventInfo h1 {
+        font-size: 25px;
+    }
+
+    .eventInfo h2 {
+        font-size: 20px;
+    }
+
+    .eventInfo p {
+        font-size: 15px;
+    }
+}
