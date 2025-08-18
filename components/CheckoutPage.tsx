@@ -45,7 +45,7 @@ const CheckoutPage = ( {amount, name, email} : { amount:number, name:string, ema
             elements,
             clientSecret,
             confirmParams: {
-                return_url: `http://www.localhost:3000/payment-success?amount=${amount}&email=${email}&name=${name}`,
+                return_url: `http://www.localhost:3000/payment-success/${encodeURIComponent(amount)}/${encodeURIComponent(email)}/${encodeURIComponent(name)}`,
             },
         });
 
