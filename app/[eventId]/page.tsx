@@ -14,11 +14,8 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined){
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-export default function EventPage({
-  params,
-}: {
-  params: { eventId: number };
-}) {
+// @ts-expect-error eventId coming from events page
+export default function EventPage({ params }) {
     const [error, setError] = useState("");
     const [showpayment, setShowpayment] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -29,12 +26,12 @@ export default function EventPage({
         confemail: '',
     });
     
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }))
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (formData.confemail != formData.email) {
             setError("Emails do not match");
