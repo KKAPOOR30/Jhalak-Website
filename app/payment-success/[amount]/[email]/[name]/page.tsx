@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-// @ts-expect-error
+// @ts-expect-error amount comes from searchParams and is always a string
 export default function PaymentSuccess({ params }) {
     const unwrapped = React.use(params);
     const { amount, email, name } = unwrapped;
