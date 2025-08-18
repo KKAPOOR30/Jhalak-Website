@@ -14,10 +14,11 @@ if (process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY === undefined){
 }
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-export default function EventPage({ params }){
-    
-    const unwrapped = React.use(params);
-    const { eventId } = unwrapped;
+export default function EventPage({
+  params,
+}: {
+  params: { eventId: number };
+}) {
     const [error, setError] = useState("");
     const [showpayment, setShowpayment] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -39,7 +40,7 @@ export default function EventPage({ params }){
             setError("Emails do not match");
         } else { // email confirmed
             setError("");
-            setShowpayment((events[eventId].cost !== 0));
+            setShowpayment((events[params.eventId].cost !== 0));
             writeToSheet([[formData.name, formData.email, "false"]], "Event1!A1")
             setSubmitted(true);
         }
@@ -64,16 +65,16 @@ export default function EventPage({ params }){
                 <div className={styles.eventInfo}>
                     <div className={styles.eventHeader}>
                         <div>
-                            <h1><b>{events[eventId].name}</b></h1>
+                            <h1><b>{events[params.eventId].name}</b></h1>
                             <br></br>
-                            <h2><b>Location:</b> {events[eventId].location}</h2>
-                            <h2><b>Date:</b> {events[eventId].date}, {events[eventId].time}</h2>
-                            <h2><b>{events[eventId].cost !== 0? "Cost: $" + events[eventId].cost: ""}</b></h2>
+                            <h2><b>Location:</b> {events[params.eventId].location}</h2>
+                            <h2><b>Date:</b> {events[params.eventId].date}, {events[params.eventId].time}</h2>
+                            <h2><b>{events[params.eventId].cost !== 0? "Cost: $" + events[params.eventId].cost: ""}</b></h2>
                         </div>
-                        <img src={events[eventId].image}></img>
+                        <img src={events[params.eventId].image}></img>
                     </div>
                     <br></br>
-                    <p>{events[eventId].description}</p>
+                    <p>{events[params.eventId].description}</p>
                 </div>
                 <div className={styles.formsContainer}>
                     {!submitted && 
@@ -101,11 +102,11 @@ export default function EventPage({ params }){
                             stripe={stripePromise} 
                             options={{
                                 mode: "payment",
-                                amount: events[eventId].cost * 100,
+                                amount: events[params.eventId].cost * 100,
                                 currency: "cad",
                         }}
                         >
-                            <CheckoutPage amount={(events[eventId].cost)} name={formData.name} email={formData.email}/>
+                            <CheckoutPage amount={(events[params.eventId].cost)} name={formData.name} email={formData.email}/>
                         </Elements> 
                     </div>): (<div></div>)}
 

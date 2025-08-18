@@ -1,8 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
+import React from 'react';
 
-export default function PaymentSuccess({ params }: any) {
-    const { amount, email, name } = params;
-    
+// @ts-expect-error
+export default function PaymentSuccess({ params }) {
+    const unwrapped = React.use(params);
+    const { amount, email, name } = unwrapped;
+
     return (
         <div style={{margin: "10vw", padding: "2vw", backgroundColor: "#f0ad4c"}}>
             <p>Thank you {name}, your payment of ${amount} has been received. We will send you a confirmation email at {email} within the next 24 hours. If we do not get back to you, you can reach out to us at utscjhalak@gmail.com.</p>
