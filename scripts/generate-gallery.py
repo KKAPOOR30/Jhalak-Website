@@ -1,7 +1,7 @@
 import os
 
 # Path to the gallery folder
-GALLERY_ROOT = os.path.join(os.getcwd(), "../galleryPhotos")
+GALLERY_ROOT = os.path.join(os.getcwd(), "../public/galleryPhotos")
 
 # Allowed file extensions
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
@@ -16,14 +16,14 @@ for folder_name in os.listdir(GALLERY_ROOT):
     if os.path.isdir(folder_path):
         # Get files with allowed extensions
         files = [
-            f"/gallaryPhotos/{folder_name}/{file}"
+            f"/galleryPhotos/{folder_name}/{file}"
             for file in sorted(os.listdir(folder_path))
             if os.path.splitext(file)[1].lower() in ALLOWED_EXTENSIONS
         ]
         gallery_data[folder_name] = files
 
 # Build TypeScript string
-ts_lines = ["export const galleryData = {"]
+ts_lines = ["export const galleryData: Record<string, string[]> = {"]
 for folder, files in gallery_data.items():
     ts_lines.append(f'  "{folder}": [')
     for file in files:

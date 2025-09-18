@@ -5,24 +5,27 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Play, Calendar, Tag, Folder, ArrowLeft } from "lucide-react"
+import { Play, Folder, ArrowLeft } from "lucide-react"
 import { galleryData } from "@/components/galleryData"
+import Link from "next/link"
+import styles from "./galleryStyle.module.css";
 
-type MediaItem = {
-  id: string
-  type: "photo" | "video"
-  src: string
-  thumbnail?: string
-  title: string
-  date?: string
-  event: string
+function getFileType(fileName: string): "photo" | "video" | "unknown" {
+  const imageExtensions = [".png", ".jpg", ".jpeg", ".gif", ".webp"];
+  const videoExtensions = [".mp4", ".mov", ".webm"];
+
+  const ext = fileName.toLowerCase().slice(fileName.lastIndexOf("."));
+
+  if (imageExtensions.includes(ext)) return "photo";
+  if (videoExtensions.includes(ext)) return "video";
+  return "unknown";
 }
 
-export default function Home() {
-  const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null)
+export default function Gallery() {
+  const [selectedMedia, setSelectedMedia] = useState<string | null>(null)
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null)
 
-  const openLightbox = (media: MediaItem) => {
+  const openLightbox = (media: string) => {
     setSelectedMedia(media)
   }
 
@@ -42,7 +45,20 @@ export default function Home() {
     const folderItems = galleryData[selectedFolder] || []
 
     return (
-      <main className="min-h-screen bg-background">
+      <main>
+        <img className={styles.logo} src="jhalak-logo.png"></img>
+        <div className={styles.navdecoration}>
+          <ul className={styles.navbar}>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/AboutUs">About</Link></li>
+              <li><Link href="/GetInvolved">Join</Link></li>
+              <li><Link href="/Gallery">Gallery</Link></li>
+              <li><Link href="/Events">Events</Link></li>
+          </ul>
+          <div className={styles.navimg}>
+            <img src="jhalak-background-top.png"></img>
+          </div>
+        </div>
         <div className="container mx-auto px-4 py-8">
           {/* Folder Header */}
           <div className="mb-8">
@@ -50,48 +66,44 @@ export default function Home() {
               <ArrowLeft className="w-4 h-4" />
               Back to Gallery
             </Button>
-            <h1 className="text-4xl font-bold text-foreground mb-2">{selectedFolder}</h1>
-            <p className="text-muted-foreground">{folderItems.length} items</p>
+            <h1 className={styles.titles}>{selectedFolder}</h1>
+            <p className={styles.countTitle}>{folderItems.length} items</p>
           </div>
 
           {/* Folder Media Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {folderItems.map((item) => (
+            {folderItems.map((item: string) => (
               <Card
-                key={item.id}
+                key={item}
                 className="group cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-300"
                 onClick={() => openLightbox(item)}
               >
                 <CardContent className="p-0 relative">
                   <div className="aspect-video relative overflow-hidden">
-                    {item.type === "video" ? (
+                    {getFileType(item) === "video" ? (
                       <Image
-                        src={item.thumbnail || item.src}
-                        alt={item.title}
+                        src="/Logo.jpg"
+                        alt={item.slice(item.lastIndexOf("/"))}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                     ) : (
                       <Image
-                        src={item.src || "/placeholder.svg"}
-                        alt={item.title}
+                        src={item || "/Logo.jpg"}
+                        alt={item.slice(item.lastIndexOf("/"))}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                     )}
-                    {item.type === "video" && (
+                    {getFileType(item) === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
                         <div className="bg-white/90 rounded-full p-3">
                           <Play className="w-6 h-6 text-black fill-black" />
                         </div>
                       </div>
                     )}
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">Hello{/*new Date(item.date).toLocaleDateString()*/}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -111,10 +123,10 @@ export default function Home() {
                 >
                   ✕
                 </button>
-                {selectedMedia.type === "photo" ? (
+                {getFileType(selectedMedia) === "photo" ? (
                   <Image
-                    src={selectedMedia.src || "/placeholder.svg"}
-                    alt={selectedMedia.title}
+                    src={selectedMedia || "/Logo.jpg"}
+                    alt={selectedMedia.slice(selectedMedia.lastIndexOf("/"))}
                     width={1200}
                     height={800}
                     className="max-w-full max-h-[80vh] object-contain"
@@ -122,19 +134,12 @@ export default function Home() {
                   />
                 ) : (
                   <video
-                    src={selectedMedia.src}
+                    src={selectedMedia || "/Logo.jpg"}
                     controls
                     className="max-w-full max-h-[80vh]"
                     onClick={(e) => e.stopPropagation()}
                   />
                 )}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 className="text-white font-semibold text-lg">{selectedMedia.title}</h3>
-                  <p className="text-white/80 text-sm">
-                    {/*new Date(selectedMedia.date).toLocaleDateString()*/}
-                    {selectedMedia.event && ` • ${selectedMedia.event}`}
-                  </p>
-                </div>
               </div>
             </div>
           )}
@@ -144,11 +149,24 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
+    <main>
+        <img className={styles.logo} src="jhalak-logo.png"></img>
+        <div className={styles.navdecoration}>
+          <ul className={styles.navbar}>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/AboutUs">About</Link></li>
+              <li><Link href="/GetInvolved">Join</Link></li>
+              <li><Link href="/Gallery">Gallery</Link></li>
+              <li><Link href="/Events">Events</Link></li>
+          </ul>
+          <div className={styles.navimg}>
+            <img src="jhalak-background-top.png"></img>
+          </div>
+        </div>
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Photo & Video Gallery</h1>
+          <h1 className={styles.titles}>Photo & Video Gallery</h1>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -165,8 +183,8 @@ export default function Home() {
                 <CardContent className="p-0 relative">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src={coverImage.type === "video" ? coverImage.thumbnail || coverImage.src : coverImage.src}
-                      alt={`${groupKey} folder`}
+                      src={coverImage || "/Logo.jpg"}
+                      alt={`${folder} folder`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -180,16 +198,12 @@ export default function Home() {
                     {/* Item count badge */}
                     <div className="absolute top-2 right-2">
                       <Badge variant="secondary" className="bg-black/70 text-white">
-                        {items.length} items
+                        {mediaCount} items
                       </Badge>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-semibold text-foreground mb-2">{groupKey}</h3>
-                    <div className="flex gap-4 text-sm text-muted-foreground">
-                      {photoCount > 0 && <span>{photoCount} photos</span>}
-                      {videoCount > 0 && <span>{videoCount} videos</span>}
-                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{folder}</h3>
                   </div>
                 </CardContent>
               </Card>
