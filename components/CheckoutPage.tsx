@@ -61,7 +61,7 @@ const CheckoutPage = ( {amount, name, email} : { amount:number, name:string, ema
         <form onSubmit={handleSubmit} className="bg-white p-2 rounded-md">
             {clientSecret && <PaymentElement />}
 
-            {errorMessage && <div>{errorMessage}</div>}
+            {errorMessage && <div style={{color: "red"}}>{errorMessage}</div>}
             <br></br>
             <button style={{backgroundColor: "#058789", width: "80%", marginLeft: "10%", borderRadius: "8px"}} disabled={!stripe || loading}>{!loading ? `Pay $${amount}` : "Processing..."}</button>
         </form>

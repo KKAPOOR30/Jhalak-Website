@@ -22,8 +22,11 @@ export default function EventPage({ params }) {
 
     const [formData, setFormData] = useState({
         name: '',
+        year: '',
         email: '',
         confemail: '',
+        studNum: '',
+        danceType:''
     });
     
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -38,10 +41,10 @@ export default function EventPage({ params }) {
         } else { // email confirmed
             setError("");
             setShowpayment((events[params.eventId].cost !== 0));
-            writeToSheet([[formData.name, formData.email, "false"]], "Event1!A1")
+            writeToSheet([[formData.name, formData.year, formData.email, formData.studNum, formData.danceType]], `${events[params.eventId].page}!A1`)
             setSubmitted(true);
         }
-    };   
+    };
 
     return (
         <main>
@@ -66,7 +69,7 @@ export default function EventPage({ params }) {
                             <br></br>
                             <h2><b>Location:</b> {events[params.eventId].location}</h2>
                             <h2><b>Date:</b> {events[params.eventId].date}, {events[params.eventId].time}</h2>
-                            <h2><b>{events[params.eventId].cost !== 0? "Cost: $" + events[params.eventId].cost: ""}</b></h2>
+                            <h2><b>{events[params.eventId].cost !== 0? "Entry Fee: $" + events[params.eventId].cost: ""}</b></h2>
                         </div>
                         <img src={events[params.eventId].image}></img>
                     </div>
@@ -76,18 +79,27 @@ export default function EventPage({ params }) {
                 <div className={styles.formsContainer}>
                     {!submitted && 
                     <form className={styles.personalForm} onSubmit={handleSubmit}>
-                        <h3>Please submit personal information before continuing to payments</h3>
+                        {/*<h3>Please submit personal information before continuing to payments</h3>*/}
 
-                        <label htmlFor="name">Name:</label>
+                        <label htmlFor="name">Full Name:</label>
                         <input type="text" id="name" name="name" onChange={handleChange} required />
+                        
+                        <label htmlFor="year">Year of Study:</label>
+                        <input type="text" id="year" name="year" onChange={handleChange} required />
 
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email">UofT Email:</label>
                         <input type="email" id="email" name="email" onChange={handleChange} required />
                         <small className={styles.helperText}>This is how we will contact you</small>
 
                         <label htmlFor="confemail">Confirm Email:</label>
                         <input type="email" id="confemail" name="confemail" onChange={handleChange} required />
                         {error && <p>email does not match</p>}
+
+                        <label htmlFor="studNum">Student Number:</label>
+                        <input type="text" id="studNum" name="studNum" onChange={handleChange} required />
+
+                        <label htmlFor="danceType">Dance Type (Classical, Bollywood):</label>
+                        <input type="text" id="danceType" name="danceType" onChange={handleChange} required />
 
                         <button type="submit">Submit</button>
                     </form>
@@ -107,7 +119,7 @@ export default function EventPage({ params }) {
                         </Elements> 
                     </div>): (<div></div>)}
 
-                    {!showpayment && submitted && <h2>Thank You! We will send you a confirmation email within the next 24 hours</h2>}
+                    {!showpayment && submitted && <h2>Thank You! Your resposnse has been submitted</h2>}
                 </div>
             </div>
         </main> 
