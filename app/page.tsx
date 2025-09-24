@@ -32,11 +32,9 @@ export default function Home() {
         </div>
         <div className={styles.homeSection}>
             <h1 className={styles.titles}>About Us</h1>
-            <p>
-                We JHALAK are the UTSC's premier fusion dance team, celebrated for creatively 
+            <p>{`We JHALAK are the UTSC's premier fusion dance team, celebrated for creatively 
                 blending Hip-Hop, Bollywood and Classical styles. Our inclusive community is built 
-                for dancers of all levels to share their passion and precision.
-            </p>
+                for dancers of all levels to share their passion and precision.`}</p>
         </div>
         <div className={styles.homeSection}>
             <h1 className={styles.titles}>Upcoming</h1>
