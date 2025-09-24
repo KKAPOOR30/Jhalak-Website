@@ -54,7 +54,7 @@ export default function GetInvolved(){
                 <div className={styles.navimg}>
                     <img src="jhalak-background-top.png"></img>
                 </div>
-                </div>
+            </div>
             <div className={styles.formDiv}>
                 <h2>General Team Membership</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -32,12 +32,9 @@ export default function Home() {
         </div>
         <div className={styles.homeSection}>
             <h1 className={styles.titles}>About Us</h1>
-            <p>This is jhalak bhal blah jbfkdbjbejcnjecb cdkc w cw cw djh c wjewkje
-            cwijc wThis is jhalak bhal blah jbfkdbjbejcnjecb cdkc w cw cw djh c 
-            wjewkje cwijc wThis is jhalak bhal blah jbfkdbjbejcnjecb cdkc w cw cw
-            djh c wjewkje cwijc wThis is jhalak bhal blah jbfkdbjbejcnjecb cdkc 
-            w cw cw djh c wjewkje cwijc wThis is jhalak bhal blah 
-            jbfkdbjbejcnjecb cdkc w cw cw djh c wjewkje cwijc w</p>
+            <p>{`We JHALAK are the UTSC's premier fusion dance team, celebrated for creatively 
+                blending Hip-Hop, Bollywood and Classical styles. Our inclusive community is built 
+                for dancers of all levels to share their passion and precision.`}</p>
         </div>
         <div className={styles.homeSection}>
             <h1 className={styles.titles}>Upcoming</h1>
@@ -49,7 +46,7 @@ export default function Home() {
                         <h1>{event.name}</h1>
                         <h2>When: {event.date} {event.time}</h2>
                         <h2>Where: {event.location}</h2>
-                        <h2>Cost: ${event.cost}</h2>
+                        <h2>{(event.cost !== 0)? "Entry Fee: ${event.cost}": <br></br>}</h2>
                         <p>{event.description}</p>
                     </div>
                 </div>
