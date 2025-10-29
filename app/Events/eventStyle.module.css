@@ -98,6 +98,12 @@
     font-size: large;
 }
 
+.noEvent {
+    font-size: medium;
+    color:#058789;
+    text-align: center;
+}
+
 @media screen and (min-width: 700px) {
     .navbar li {
         font-size: 20px;
