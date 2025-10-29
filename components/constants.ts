@@ -1,4 +1,3 @@
-
 /*
 Contains all the active events for the club  
 
@@ -10,10 +9,38 @@ location: location of the event
 description: description of the event
 image: image of the event
 cost: cost of the event in cad, if free write 0
-page: page on the sheet the signup form should write to
+page: page on the google sheet the signup form should write to
 */
-export const events = [
-    {
+export const events: {
+    id: number;
+    name: string;
+    date: string;
+    time: string;
+    location: string;
+    description: string;
+    image: string;
+    cost: number;
+    page: string;
+    needPay: boolean;
+    formLink: string;
+}[] = [
+
+]
+
+export const pastEvents: {
+    id: number;
+    name: string;
+    date: string;
+    time: string;
+    location: string;
+    description: string;
+    image: string;
+    cost: number;
+    page: string;
+    needPay: boolean;
+    formLink: string;
+}[] = [
+        {
         id: 0, 
         name: "Jhalak Dance Auditions", 
         date: "September 24 & 25", 
@@ -27,5 +54,7 @@ export const events = [
         image: "audition.jpg",
         cost: 0, 
         page:"Auditions",
-    },
-];
+        needPay: false,
+        formLink: ""
+    }, 
+]

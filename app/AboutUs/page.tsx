@@ -11,27 +11,26 @@ export default function AboutUs() {
     const [activeIndex, setActiveIndex] = useState<number[]>([]);
 
     const presidants = [
-        {src:"Logo.jpg", description:["Ishaan Kaushik","⁠4th year, Neuroscience & Human Biology", "⁠Fav Style: Animation", "Fav Hobby: Cricket", "Fav Song: Dhoom Machale"], id:0},
-        {src:"Logo.jpg", description:["Luqman Qureshi", "3rd year, Arts and Media Management", "Fav Style: Hip Hop", "Fav Hobby: Studying", "Fav Song: For A Reason"], id:1}
+        {src:"teamPhotos/ishaan.jpeg", description:["Ishaan Kaushik","⁠4th year, Neuroscience & Human Biology", "⁠Fav Style: Animation", "Fav Hobby: Cricket", "Fav Song: Dhoom Machale"], id:0},
+        {src:"teamPhotos/luqman.jpeg", description:["Luqman Qureshi", "3rd year, Arts and Media Management", "Fav Style: Hip Hop", "Fav Hobby: Studying", "Fav Song: For A Reason"], id:1}
     ]
 
     const directors = [
-        {src:"Logo.jpg", description:["Shruti Javekar (Marketing Director)", "⁠2nd year, Management", "⁠Fav Style: Swing", "⁠Fav Hobby: Dancing", "Fav Song: M.I.A"], id:2},
-        {src:"Logo.jpg", description:["Shreya Tammareddy (Marketing Director)", "3rd year, Anthropology", "Fav Style: Hip Hop", "Fav Hobby: Dancing", "Fav Song: Shaky"], id:3},
-        {src:"Logo.jpg", description:["Tia Pinto (Marketing Director)", "3rd year, Psychology", "Fav Style: Contemporary", "Fav Hobby: Making Fan Edits", "Fav Song: Kudmayi"], id:4},
-        {src:"Logo.jpg", description:["Pari Brahmbhatt (Stage Manager)", "⁠2nd year, Human Biology & Psychology", "⁠Fav Style: Bollywood Fusion", "⁠Fav Hobby: Crocheting", "Fav Song: Piya O Re Piya"], id:5},
-        {src:"Logo.jpg", description:["Kshitij Kapoor (Web Manager)", "3rd year, Computer Science & Statistics", "Fav Style: Video Game Emotes :)", "Fav Hobby: Soccer", "Fav Song: Koi Kahe Kehta Rahe"], id:6},
-        {src:"Logo.jpg", description:["Nayana Thayan (Secretary)", "2nd year, Neuroscience & Human Biology", "Fav Style: Bharatanatyam, Kuthu", "Fav Hobby: Writing, Crafts, Dancing, Music", "Fav Song: Barso Re, Sirivennela"], id:7},
-        {src:"Logo.jpg", description:["Raghav Kumar (Outreach Director)", "⁠2nd year, Management", "Fav Style: Urban Hip Hop, Bollywood", "⁠Fav Hobby: Visual Effects", "Fav Song: Arabic Kuthu"], id:8},
-        {src:"Logo.jpg", description:["Ayanika Bhattacharjee (Events Director)", "3rd year, Mental Health Specialist", "Fav Style: Kathak", "Fav Hobby: Reading, Singing", "Fav Song: Mast Magan"], id:9},
-        {src:"Logo.jpg", description:["Diya Patel (Events Director)", "2nd year, Management & International Business", "Fav Style: Bharatanatyam", "Fav Hobby: Dance", "Fav Song: Dhun"], id:10},
+        {src:"teamPhotos/shruti.jpeg", description:["Shruti Javekar (Marketing Director)", "⁠2nd year, Management", "⁠Fav Style: Swing", "⁠Fav Hobby: Dancing", "Fav Song: M.I.A"], id:2},
+        {src:"teamPhotos/tia.JPG", description:["Tia Pinto (Marketing Director)", "3rd year, Psychology", "Fav Style: Contemporary", "Fav Hobby: Making Fan Edits", "Fav Song: Kudmayi"], id:3},
+        {src:"teamPhotos/pari.JPG", description:["Pari Brahmbhatt (Stage Manager)", "⁠2nd year, Human Biology & Psychology", "⁠Fav Style: Bollywood Fusion", "⁠Fav Hobby: Crocheting", "Fav Song: Piya O Re Piya"], id:4},
+        {src:"teamPhotos/nayana.jpeg", description:["Nayana Thayan (Secretary)", "2nd year, Neuroscience & Human Biology", "Fav Style: Bharatanatyam, Kuthu", "Fav Hobby: Writing, Crafts, Dancing, Music", "Fav Song: Barso Re, Sirivennela"], id:5},
+        {src:"teamPhotos/kshitij.JPG", description:["Kshitij Kapoor (Web Manager)", "3rd year, Computer Science & Statistics", "Fav Style: Video Game Emotes :)", "Fav Hobby: Soccer", "Fav Song: Koi Kahe Kehta Rahe"], id:6},
+        {src:"teamPhotos/raghav.jpeg", description:["Raghav Kumar (Outreach Director)", "⁠2nd year, Management", "Fav Style: Urban Hip Hop, Bollywood", "⁠Fav Hobby: Visual Effects", "Fav Song: Arabic Kuthu"], id:7},
+        {src:"teamPhotos/ayanika.JPG", description:["Ayanika Bhattacharjee (Events Director)", "3rd year, Mental Health Specialist", "Fav Style: Kathak", "Fav Hobby: Reading, Singing", "Fav Song: Mast Magan"], id:8},
+        {src:"teamPhotos/diya.jpeg", description:["Diya Patel (Events Director)", "2nd year, Management & International Business", "Fav Style: Bharatanatyam", "Fav Hobby: Dance", "Fav Song: Dhun"], id:9},
     ]
 
     const choreographers = [
-        {src:"Logo.jpg", description:["Heer Niraj Shah", "⁠3rd year, I don’t have a major but rather a specialization in Strategy", "⁠Fav Style: Bollywood", "Fav Hobby: Travelling⁠", "Fav Song: C'est La Vie"], id:12},
-        {src:"Logo.jpg", description:["Parnika Saxena", "4th year, Phychology & Applied Statistics", "Fav Style: Kathak, Semi-classical and Bollywood Fusion", "Fav Hobby: Dancing, Gym, Outdoor Recreational Activities", "Fav Song: Masakali"], id:13},
-        {src:"Logo.jpg", description:["Hritika Verma","4th year, Management & Finance", "Fav Style: Bollywood Fusion", "Fav Hobby: Pilates", "Fav Song: Brown Rang"], id:14},
-        {src:"Logo.jpg", description:["Shreya Sen", "⁠2nd year, Human Biology", "⁠Fav Style: Bharatanatyam", "Fav Hobby: Crocheting", "Fav Song: Soch Na Sake"], id:15},
+        {src:"teamPhotos/heer.jpeg", description:["Heer Niraj Shah", "⁠3rd year, I don’t have a major but rather a specialization in Strategy", "⁠Fav Style: Bollywood", "Fav Hobby: Travelling⁠", "Fav Song: C'est La Vie"], id:10},
+        {src:"teamPhotos/parnika.jpeg", description:["Parnika Saxena", "4th year, Phychology & Applied Statistics", "Fav Style: Kathak, Semi-classical and Bollywood Fusion", "Fav Hobby: Dancing, Gym, Outdoor Recreational Activities", "Fav Song: Masakali"], id:11},
+        {src:"teamPhotos/hritika.jpeg", description:["Hritika Verma","4th year, Management & Finance", "Fav Style: Bollywood Fusion", "Fav Hobby: Pilates", "Fav Song: Brown Rang"], id:12},
+        {src:"teamPhotos/shreya.jpeg", description:["Shreya Sen", "⁠2nd year, Human Biology", "⁠Fav Style: Bharatanatyam", "Fav Hobby: Crocheting", "Fav Song: Soch Na Sake"], id:13},
     ]
 
     const toggleImage = (id: number) => {
